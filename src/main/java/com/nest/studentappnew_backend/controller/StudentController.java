@@ -20,4 +20,9 @@ public class StudentController {
     {
         return "welcome to galary page";
     }
+    @GetMapping("/home")
+    public String Hompage(){
+        return "welcome to home page";
+    }
+
 }
