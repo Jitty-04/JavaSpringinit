@@ -47,4 +47,9 @@ public class StudentController {
         return map;
 
     }
+    @CrossOrigin(origins = "*")
+    @GetMapping("/viewall")
+    public List<Students> ViewStudents() {
+        return (List<Students>) dao.findAll();
+    }
 }
