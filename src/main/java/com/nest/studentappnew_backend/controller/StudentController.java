@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -27,5 +28,12 @@ public class StudentController {
         return map;
 
 
+    }
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/search",consumes ="application/json",produces = "application/json")
+    public List<Students> SearchStudents(@RequestBody  Students s) {
+        String admno = s.getAdmno().toString();
+        System.out.println(admno);
+        return (List<Students>) dao.SearchStudents(s.getAdmno());
     }
 }
